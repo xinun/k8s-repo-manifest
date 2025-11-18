@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: devweb-containers
-        image: dbgurum/mymotto:1.0
+        image: docker.io/xinuun/devweb:1.0
         ports:
         - containerPort: 80
