@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-test
+  namespace: default
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
+  selector:
+    matchLabels:
+      app: deploy-test
+  template:
+    metadata:
+      labels:
+        app: deploy-test
+    spec:
+      containers:
+        - name: deploy-test
+          image: 083495778532.dkr.ecr.ap-northeast-2.amazonaws.com/mogle_eks_repo:py_app_2.0
+          ports:
+            - containerPort: 5000
