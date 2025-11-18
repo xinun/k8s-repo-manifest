@@ -6,10 +6,7 @@ metadata:
   labels:
     env: dev
 spec:
-  selector:
-    matchLabels:
-      app: deploy-test
   template:
     metadata:
       labels:
-        app: deploy-test
+        env: dev
