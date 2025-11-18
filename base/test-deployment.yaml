@@ -4,7 +4,7 @@ metadata:
   name: deploy-test
   namespace: default
 spec:
-  replicas: 3
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: deploy-test
-          image: 083495778532.dkr.ecr.ap-northeast-2.amazonaws.com/mogle_eks_repo:py_app_2.0
+          image: nginx:1.26
           ports:
             - containerPort: 5000
